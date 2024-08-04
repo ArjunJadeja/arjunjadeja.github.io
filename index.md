@@ -1,5 +1,10 @@
-Here you can say lots of fun things about your site.
+Hi, I'm Arjun
 
-Maybe say a some things about yourself.
+I enjoy:
+- Going to the gym
+- Coding
+- Exploring various things
 
-Or maybe what you plan to blog about.
+I write occasionally.
+
+Feel free to connect.

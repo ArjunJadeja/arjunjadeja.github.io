@@ -145,6 +145,8 @@ println(userFromJson)  // Output: User(name=Tim, age=20, password=null)
 2. **Extra work internally:** Maintaining compatibility between versions of serializable classes requires additional efforts and consideration.
 3. **No need for it:** Not all objects need to be transferred or stored as data. For example, objects like `Thread`, which are tied to the JVM, or objects that represent system resources, are not meaningful to serialize.
 
+To summarize, Serialization / Deserialization is the process of transferring / copying / replicating the state of data from one place to another. This could be from server to frontend, from one location to another using cables, or between different applications or systems.
+
 That's it.
 Thanks for Reading!
 This is my first blog post converted from my notes, I would highly appreciate the feedback. I've tried to simplify the topic for better understanding.
