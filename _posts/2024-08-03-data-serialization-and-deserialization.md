@@ -145,6 +145,16 @@ println(userFromJson)  // Output: User(name=Tim, age=20, password=null)
 2. **Extra work internally:** Maintaining compatibility between versions of serializable classes requires additional efforts and consideration.
 3. **No need for it:** Not all objects need to be transferred or stored as data. For example, objects like `Thread`, which are tied to the JVM, or objects that represent system resources, are not meaningful to serialize.
 
+## That's it.
+## Thanks for Reading!
+
+This is my first blog post converted from my notes, I would highly appreciate the feedback. I've tried to simplify the topic for better understanding.
+
+To learn more, here's a good blog:
+
+- [Introduction to using Kotlin Serialization](https://proandroiddev.com/introduction-to-using-kotlin-serialization-5bbfcf735aba)
+
+
 ### References
 
 - [Wikipedia - Serialization](https://en.wikipedia.org/wiki/Serialization)
