@@ -13,26 +13,26 @@ another:
 1. **Serialization**
 2. **Deserialization**
 
-### What is serialization?
+### What is Serialization?
 
 Serialization is the process of converting the state of an object, such as a `User`, into a form
 that can be persisted or transferred.
 
 ![Serialization Diagram](/assets/data-serialization-and-deserialization/fig.serialization.svg)
 
-### What is deserialization?
+### What is Deserialization?
 
 Deserialization is the process of converting a stream of data back into an object, like
 reconstructing a `User` object from the transferred data.
 
 ![Deserialization Diagram](/assets/data-serialization-and-deserialization/fig.deserialization.svg)
 
-### How does the serialized data travel? Is it in bits (0101) or is it raw data (ab12)?
+### How does the serialized data travel? Is it in bits (0101) or is it raw data (abcd)?
 
 It depends on the type of serialization we are following:
 
 1. **Binary Serialization (0101)**: ProtoBuf, CBOR
-2. **Text-Based Serialization (anyType)**: JSON, XML, YAML
+2. **Text-Based Serialization**: JSON, XML, YAML
 
 ![Types of Serialization Diagram](/assets/data-serialization-and-deserialization/fig.types-of-serialization.svg)
 
@@ -102,13 +102,13 @@ val userFromJson = Json.decodeFromString<User>(json)
 println(userFromJson)  // Output: User(name=Jim, age=21)
 ```
 
-Can we ignore any field during serialization?
+### Can we ignore any field during Serialization?
 
 Yes, we can ignore fields during serialization with most libraries, whether we are using Java-based libraries or Kotlin-specific libraries. 
 
-We have to mark the field to be ignored as transient, it will not be serialized by the standard Kotlin serialization library.
+We have to mark the field as transient and it will not be serialized by the standard Kotlin serialization library.
 
-Annotate the field with @Transient in the class:
+Annotate the field with `@Transient` in the class:
 
 ```kotlin
 import kotlinx.serialization.Serializable
@@ -135,17 +135,18 @@ val userFromJson = Json.decodeFromString<User>(json)
 println(userFromJson)  // Output: User(name=Tim, age=20, password=null)
 ```
 
+![Serialization Process Diagram](/assets/data-serialization-and-deserialization/fig.serialization-process-with-transient.svg)
+
 **Note:** A default value is required for non-serialized (@Transient) fields because the deserialization process needs to create a complete instance of the object. We can make it as nullable and provide default value as `null`.
 
 ### Why all the classes are not serializable by default in kotlin?
 
-1. 
+1. **Not safe:** Serialization allows access to non-transient private members of a class that are not accessible otherwise. Classes containing sensitive information should not be serializable.
+2. **Extra work internally:** Maintaining compatibility between versions of serializable classes requires additional efforts and consideration.
+3. **No need for it:** Not all objects need to be transferred or stored as data. For example, objects like `Thread`, which are tied to the JVM, or objects that represent system resources, are not meaningful to serialize.
 
 ### References
 
-Wikipedia - https://en.wikipedia.org/wiki/Serialization
-
-[KotlinLang.org](http://KotlinLang.org) - https://kotlinlang.org/docs/serialization.html
-
-Rock the
-prototype - https://rock-the-prototype.com/en/learn-programming/serialization-how-does-serialization-of-data-work/
+- [Wikipedia - Serialization](https://en.wikipedia.org/wiki/Serialization)
+- [KotlinLang.org - Serialization](https://kotlinlang.org/docs/serialization.html)
+- [Rock the Prototype - Serialization](https://rock-the-prototype.com/en/learn-programming/serialization-how-does-serialization-of-data-work/)
