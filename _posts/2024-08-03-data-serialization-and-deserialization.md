@@ -154,7 +154,6 @@ To learn more, here's a good blog:
 
 - [Introduction to using Kotlin Serialization](https://proandroiddev.com/introduction-to-using-kotlin-serialization-5bbfcf735aba)
 
-
 ### References
 
 - [Wikipedia - Serialization](https://en.wikipedia.org/wiki/Serialization)
