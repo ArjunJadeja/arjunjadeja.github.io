@@ -116,9 +116,9 @@ import kotlinx.serialization.Transient
 
 @Serializable
 data class User(
-val name: String,
-val age: Int,
-@Transient val password: String? = null
+    val name: String,
+    val age: Int,
+    @Transient val password: String? = null
 )
 ```
 
