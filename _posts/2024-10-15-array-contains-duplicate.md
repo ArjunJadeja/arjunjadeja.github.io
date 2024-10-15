@@ -9,6 +9,8 @@ tags: [dsa, array, hashset]
 
 **Problem Statement:** Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.
 
+**Solve Here:** [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/description/)
+
 ### Examples:
 
 | Input | Output |
