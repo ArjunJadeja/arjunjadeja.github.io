@@ -153,7 +153,7 @@ This is just a basic example. We can do much more using annotations in our code.
 
 Now can we say that annotations are frontend of the complicated process running behind the scene and making life easy for user(here, it is developer)? 
 
-don't hesitate to use use it wisely 😉
+don't hesitate to use them wisely 😉
 
 checkout [KotlinPoet](https://square.github.io/kotlinpoet/) for code generation and use it with ksp to generate code.
 
