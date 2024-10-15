@@ -1,8 +1,8 @@
 ---
 title: Exploring Loops in Kotlin
 date: 2024-10-15 12:00:00 +0530
-categories: [Problem Solving, Basic Concepts]
-tags: [loops]
+categories: [Problem Solving, Basics]
+tags: [kotlin-basics, loops]
 ---
 
 When diving into problem-solving in Kotlin, **loops** are an essential concept that we encounter frequently. Kotlin offers various ways to loop through data structures, ranging from traditional loops to more concise syntax sugar like `forEach`. In this post, we'll explore loops, so that we can solve problems efficiently.
