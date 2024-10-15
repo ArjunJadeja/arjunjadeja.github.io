@@ -105,6 +105,36 @@ fruits.forEachIndexed { index, fruit ->
 
 This is equivalent to using a `for` loop with indices, but it's much shorter and often easier to read.
 
+## Controlling Loops with break and continue
+
+When working with loops, there are times when you need to interrupt the normal flow of the loop. Kotlin provides `break` and `continue` to help with this.
+
+### break
+
+The `break` statement is used to terminate the loop entirely when a certain condition is met:
+
+```kotlin
+for (i in 1..5) {
+    if (i == 3) break
+    println(i)
+}
+```
+
+This will print 1, 2, and then exit the loop when `i` equals 3.
+
+### continue
+
+The `continue` statement skips the current iteration and moves to the next one:
+
+```kotlin
+for (i in 1..5) {
+    if (i == 3) continue
+    println(i)
+}
+```
+
+This will print 1, 2, 4, 5, skipping 3 but continuing the rest of the loop.
+
 ## Looping Through Different Data Structures
 
 Let's see how loops work with different data structures like arrays, lists, and strings.
