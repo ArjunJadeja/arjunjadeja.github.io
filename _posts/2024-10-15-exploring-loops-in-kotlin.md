@@ -1,7 +1,7 @@
 ---
 title: Exploring Loops in Kotlin
 date: 2024-10-15 12:00:00 +0530
-categories: [Problem Solving, Basics]
+categories: [Problem Solving, Helpers]
 tags: [kotlin-basics, loops]
 ---
 
