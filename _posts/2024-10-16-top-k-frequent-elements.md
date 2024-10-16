@@ -9,7 +9,7 @@ tags: [dsa, array, hashmap, sorting]
 
 Given an integer array `nums` and an integer `k`, return the `k` most frequent elements. You may return the answer in any order.
 
-**Solve Here:** [Two Sum](https://leetcode.com/problems/top-k-frequent-elements/description/)
+**Solve Here:** <a href="https://leetcode.com/problems/top-k-frequent-elements/description/" target="_blank">Top K Frequent Elements</a>
 
 ### Examples:
 
