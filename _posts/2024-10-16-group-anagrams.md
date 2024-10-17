@@ -9,7 +9,7 @@ tags: [dsa, string, array, hashmap]
 
 Given an array of strings `strs`, group the anagrams together. You can return the answer in any order.
 
-**Solve Here:** [Two Sum](https://leetcode.com/problems/group-anagrams/description/)
+**Solve Here:** [Group Anagrams](https://leetcode.com/problems/group-anagrams/description/)
 
 ## Examples
 
