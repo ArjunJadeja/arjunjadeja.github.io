@@ -54,7 +54,7 @@ fun productExceptSelf(nums: IntArray): IntArray {
 **Explanation:**
 For each index i, the algorithm multiplies all elements in `nums` except `nums[i]`. This requires nested loops, resulting in O(n²) time complexity.
 
-### 2. Using Division (Not Allowed by Problem Constraints)
+### 2. Using Division
 
 * **Description:**
   - First, calculate the product of all elements in the array. Then, for each element at index i, divide the total product by `nums[i]`.
@@ -79,15 +79,49 @@ fun productExceptSelf(nums: IntArray): IntArray {
 **Explanation:**
 Calculate the total product of the array, then divide by each element to get the result. This approach has O(n) time complexity but uses division, which violates the problem constraints.
 
-### 3. Prefix and Postfix Products
+### 3. Two Arrays Products
 
 * **Description:**
-  - First, create a prefix product array where `prefix[i]` is the product of all elements before i.
-  - Then, calculate a postfix product from the end of the array and multiply it with the prefix array.
-  - This approach avoids using division and achieves O(n) time complexity.
+  - Create separate arrays for left and right products.
+  - Combine them to get the final result.
 
-* **Time Complexity:** O(n) – We pass through the array twice, once for the prefix and once for the postfix.
-* **Space Complexity:** O(n) – The result array.
+* **Time Complexity:** O(n) – Three passes through the array.
+* **Space Complexity:** O(n) – Three arrays used.
+
+```kotlin
+fun productExceptSelf(nums: IntArray): IntArray {
+    val n = nums.size
+    val leftProducts = IntArray(n) { 1 }
+    val rightProducts = IntArray(n) { 1 }
+    val result = IntArray(n)
+    
+    for (i in 1 until n) {
+        leftProducts[i] = leftProducts[i-1] * nums[i-1]
+    }
+    
+    for (i in n-2 downTo 0) {
+        rightProducts[i] = rightProducts[i+1] * nums[i+1]
+    }
+    
+    for (i in nums.indices) {
+        result[i] = leftProducts[i] * rightProducts[i]
+    }
+    
+    return result
+}
+```
+
+**Explanation:**
+Uses two arrays to store products from both directions, then combines them to get the final result without using division.
+
+### 4. Space-Optimized Products
+
+* **Description:**
+  - Optimize the previous approach by using only the output array.
+  - Calculate products in-place using two passes.
+
+* **Time Complexity:** O(n) – Two passes through the array.
+* **Space Complexity:** O(1) – Only the output array used.
 
 ```kotlin
 fun productExceptSelf(nums: IntArray): IntArray {
@@ -110,16 +144,17 @@ fun productExceptSelf(nums: IntArray): IntArray {
 ```
 
 **Explanation:**
-The first loop calculates the prefix product for each element, while the second loop calculates the postfix product. The final result at each index is the product of the prefix and postfix, which avoids division and achieves O(n) time complexity.
+Uses the result array to store intermediate products and combines them in-place, achieving optimal space complexity.
 
 ## Complexity Comparison:
 
 | Approach | Time Complexity | Space Complexity |
 |----------|-----------------|-----------------|
-| Brute Force | O(n²) | O(n)            |
-| Division | O(n) | O(n)            |
-| Prefix and Postfix Products | O(n) | O(n)            |
+| Brute Force | O(n²) | O(n) |
+| Division | O(n) | O(n) |
+| Two Arrays Products | O(n) | O(n) |
+| Space-Optimized Products | O(n) | O(1) |
 
 ## Conclusion:
 
-The brute force method is simple but inefficient with O(n²) time complexity. The division method provides a quick solution but violates the problem constraints. The prefix and postfix approach provides an optimal solution with O(n) time complexity.
+The space-optimized products approach provides the optimal solution with O(n) time complexity and O(1) space complexity while meeting all problem constraints.
