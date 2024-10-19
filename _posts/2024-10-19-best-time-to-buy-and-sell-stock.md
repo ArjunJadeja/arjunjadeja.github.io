@@ -1,4 +1,9 @@
-# Best Time to Buy and Sell Stock
+---
+title: Best Time to Buy and Sell Stock
+date: 2024-10-19 15:00:00 +0530
+categories: [Problem Solving, Questions]
+tags: [dsa, array]
+---
 
 ## Problem Statement
 
