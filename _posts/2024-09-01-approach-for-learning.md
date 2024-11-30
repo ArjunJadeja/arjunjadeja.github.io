@@ -1,8 +1,8 @@
 ---
 title: Practical Approach for Learning Any Topic
 date: 2024-08-01 10:30:00 +0530
-categories: [Learning]
-tags: [learning, guidelines]
+categories: [Habits]
+tags: [routine, guidelines]
 ---
 
 ## Process
