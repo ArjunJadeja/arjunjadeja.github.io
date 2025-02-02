@@ -3,7 +3,6 @@ title: Data Serialization and Deserialization with Kotlin
 date: 2024-08-03 12:00:00 +0530
 categories: [Kotlin Notes]
 tags: [kotlin, serialization, deserialization, json]
-image: /assets/data-serialization-and-deserialization/fig.data-travel.svg
 ---
 
 Suppose you have a `User(name: String, age: Int)` object in your system. How would you transfer the
@@ -22,14 +21,14 @@ another:
 Serialization is the process of converting the state of an object, such as a `User`, into a form
 that can be persisted or transferred.
 
-![Serialization Diagram](/assets/data-serialization-and-deserialization/fig.serialization.svg)
+![Serialization Diagram](/assets/posts/data-serialization-and-deserialization/fig.serialization.svg)
 
 ### What is Deserialization?
 
 Deserialization is the process of converting a stream of data back into an object, like
 reconstructing a `User` object from the transferred data.
 
-![Deserialization Diagram](/assets/data-serialization-and-deserialization/fig.deserialization.svg)
+![Deserialization Diagram](/assets/posts/data-serialization-and-deserialization/fig.deserialization.svg)
 
 ### How does the serialized data travel? Is it in bits (0101) or is it raw data (abcd)?
 
@@ -38,7 +37,7 @@ It depends on the type of serialization we are following:
 1. **Binary Serialization (0101)**: ProtoBuf, CBOR
 2. **Text-Based Serialization**: JSON, XML, YAML
 
-![Types of Serialization Diagram](/assets/data-serialization-and-deserialization/fig.types-of-serialization.svg)
+![Types of Serialization Diagram](/assets/posts/data-serialization-and-deserialization/fig.types-of-serialization.svg)
 
 **Note:** Both the sending and receiving ends should use the same type of serialization and
 deserialization; otherwise, the state of the data can't be translated back to the same version.
@@ -60,7 +59,7 @@ traverse and process data class properties and nested objects. Reflection provid
 may incur runtime overhead, while code generation offers better performance by generating efficient
 serialization and deserialization code at compile-time.
 
-![Serialization Process Diagram](/assets/data-serialization-and-deserialization/fig.serialization-process.svg)
+![Serialization Process Diagram](/assets/posts/data-serialization-and-deserialization/fig.serialization-process.svg)
 
 ### How to serialize and deserialize the state of data in Kotlin?
 
@@ -139,7 +138,7 @@ val userFromJson = Json.decodeFromString<User>(json)
 println(userFromJson)  // Output: User(name=Tim, age=20, password=null)
 ```
 
-![Serialization Process Diagram](/assets/data-serialization-and-deserialization/fig.serialization-process-with-transient.svg)
+![Serialization Process Diagram](/assets/posts/data-serialization-and-deserialization/fig.serialization-process-with-transient.svg)
 
 **Note:** A default value is required for non-serialized (@Transient) fields because the deserialization process needs to create a complete instance of the object. We can make it as nullable and provide default value as `null`.
 
