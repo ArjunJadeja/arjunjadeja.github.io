@@ -200,14 +200,14 @@ val filled = DoubleArray(3) { 1.0 }        // [1.0, 1.0, 1.0]
 
 ## Properties
 
-### 1. `size`: Returns the number of elements in the array.
+- `size`: Returns the number of elements in the array.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
 println(numbers.size) // 5
 ```
 
-### 2. `indices`: Returns the range of valid indices for the array.
+- `indices`: Returns the range of valid indices for the array.
 
 ```kotlin
 val numbers = arrayOf(10, 20, 30)
@@ -217,7 +217,7 @@ for (i in numbers.indices) {
 }
 ```
 
-### 3. `lastIndex`: Returns the index of the last element in the array.
+- `lastIndex`: Returns the index of the last element in the array.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
@@ -226,7 +226,7 @@ println(numbers.lastIndex) // 4
 
 ## Functions
 
-### 1. `isEmpty()`: Checks if array is empty.
+- `isEmpty()`: Checks if array is empty.
 
 ```kotlin
 val empty = emptyArray<Int>()
@@ -236,7 +236,7 @@ val numbers = arrayOf(1, 2, 3)
 println(numbers.isEmpty()) // false
 ```
 
-### 2. `toTypedArray()`: Converts a primitive array to an object array or a collection to a typed array.
+- `toTypedArray()`: Converts a primitive array to an object array or a collection to a typed array.
 
 ```kotlin
 val intArray = intArrayOf(1, 2, 3)
@@ -246,7 +246,7 @@ val list = listOf(1, 2, 3)
 val array = list.toTypedArray() // Array<Int>
 ```
 
-### 3. `joinToString()`: Converts array elements into a single string with optional separator, prefix, and suffix.
+- `joinToString()`: Converts array elements into a single string with optional separator, prefix, and suffix.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
@@ -256,14 +256,14 @@ println(numbers.joinToString(prefix = "[", postfix = "]")) // [1, 2, 3, 4, 5]
 println(numbers.joinToString(separator = ", ", prefix = "{", postfix = "}")) // {1, 2, 3, 4, 5}
 ```
 
-### 4. `contentToString()`: Returns a string representation of the array contents.
+- `contentToString()`: Returns a string representation of the array contents.
 
 ```kotlin
 val numbers = intArrayOf(1, 2, 3)
 println(numbers.contentToString()) // [1, 2, 3]
 ```
 
-### 5. `sort()`: Sorts the array in ascending order (in-place).
+- `sort()`: Sorts the array in ascending order (in-place).
 
 ```kotlin
 val numbers = intArrayOf(5, 2, 8, 1, 9)
@@ -271,7 +271,7 @@ numbers.sort()
 println(numbers.contentToString()) // [1, 2, 5, 8, 9]
 ```
 
-### 6. `sortDescending()`: Sorts the array in descending order (in-place).
+- `sortDescending()`: Sorts the array in descending order (in-place).
 
 ```kotlin
 val numbers = intArrayOf(5, 2, 8, 1, 9)
@@ -279,7 +279,7 @@ numbers.sortDescending()
 println(numbers.contentToString()) // [9, 8, 5, 2, 1]
 ```
 
-### 7. `reverse()`: Reverses the order of elements in the array (in-place).
+- `reverse()`: Reverses the order of elements in the array (in-place).
 
 ```kotlin
 val numbers = intArrayOf(1, 2, 3, 4, 5)
@@ -287,7 +287,7 @@ numbers.reverse()
 println(numbers.contentToString()) // [5, 4, 3, 2, 1]
 ```
 
-### 8. `contains()`: Checks if an element exists in the array.
+- `contains()`: Checks if an element exists in the array.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
@@ -296,21 +296,21 @@ println(numbers.contains(10)) // false
 println(3 in numbers) // true (alternative syntax)
 ```
 
-### 9. `sum()`: Returns the sum of all elements (for numeric arrays).
+- `sum()`: Returns the sum of all elements (for numeric arrays).
 
 ```kotlin
 val numbers = intArrayOf(1, 2, 3, 4, 5)
 println(numbers.sum()) // 15
 ```
 
-### 10. `average()`: Returns the average of all elements (for numeric arrays).
+- `average()`: Returns the average of all elements (for numeric arrays).
 
 ```kotlin
 val numbers = intArrayOf(2, 4, 6, 8, 10)
 println(numbers.average()) // 6.0
 ```
 
-### 11. `max()` and `min()`: Returns the maximum and minimum element.
+- `max()` and `min()`: Returns the maximum and minimum element.
 
 ```kotlin
 val numbers = intArrayOf(5, 2, 8, 1, 9)
@@ -318,7 +318,7 @@ println(numbers.max()) // 9
 println(numbers.min()) // 1
 ```
 
-### 12. `filter()`: Returns a list containing only elements matching the given predicate.
+- `filter()`: Returns a list containing only elements matching the given predicate.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5, 6)
@@ -326,7 +326,7 @@ val evenNumbers = numbers.filter { it % 2 == 0 }
 println(evenNumbers) // [2, 4, 6]
 ```
 
-### 13. `map()`: Returns a list containing the results of applying the given transform function.
+- `map()`: Returns a list containing the results of applying the given transform function.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
@@ -334,14 +334,14 @@ val doubled = numbers.map { it * 2 }
 println(doubled) // [2, 4, 6, 8, 10]
 ```
 
-### 14. `forEach()`: Performs the given action on each element.
+- `forEach()`: Performs the given action on each element.
 
 ```kotlin
 val numbers = arrayOf(1, 2, 3, 4, 5)
 numbers.forEach { println(it) }
 ```
 
-### 15. `forEachIndexed()`: Performs the given action on each element with its index.
+- `forEachIndexed()`: Performs the given action on each element with its index.
 
 ```kotlin
 val numbers = arrayOf(10, 20, 30)
@@ -358,19 +358,19 @@ numbers.forEachIndexed { index, value ->
 
 Arrays in Kotlin are useful in specific scenarios:
 
-### 1. **Fixed-size collections**: When you know the exact number of elements and it won't change.
+- **Fixed-size collections**: When you know the exact number of elements and it won't change.
 
 ```kotlin
 val daysOfWeek = arrayOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
 ```
 
-### 2. **Performance-critical code**: Arrays, especially primitive arrays, offer better performance than collections.
+- **Performance-critical code**: Arrays, especially primitive arrays, offer better performance than collections.
 
 ```kotlin
 val largeDataSet = IntArray(1_000_000) // More efficient than List<Int>
 ```
 
-### 3. **Interoperability with Java**: When working with Java code that expects arrays.
+- **Interoperability with Java**: When working with Java code that expects arrays.
 
 ```kotlin
 // Java method: public void processData(int[] data)
@@ -378,7 +378,7 @@ val data = intArrayOf(1, 2, 3)
 javaObject.processData(data)
 ```
 
-### 4. **Working with varargs**: When you need to pass multiple arguments using spread operator.
+- **Working with varargs**: When you need to pass multiple arguments using spread operator.
 
 ```kotlin
 fun printAll(vararg items: String) {
@@ -389,7 +389,7 @@ val names = arrayOf("Alice", "Bob", "Charlie")
 printAll(*names)
 ```
 
-### 5. **Multi-dimensional data structures**: For matrices or grids.
+- **Multi-dimensional data structures**: For matrices or grids.
 
 ```kotlin
 val matrix = Array(3) { IntArray(3) } // 3x3 matrix

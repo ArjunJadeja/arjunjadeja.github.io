@@ -4,7 +4,7 @@ date: 2025-02-01 23:00:00 +0530
 categories: [Kotlin Bytes]
 tags: [kb, property, function]
 image:
-  path: /assets/posts/difference-between-property-and-function-in-kotlin/thumbnail.svg
+  path: /assets/posts/kotlin-bytes/property-vs-function-in-kotlin/thumbnail.svg
   alt: "Property v/s Function"
 ---
 
