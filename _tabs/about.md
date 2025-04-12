@@ -16,7 +16,7 @@ Curiosity.
 
 ## Quote
 
-"You might miss 100% of the shots you take"
+You miss 100% of the shots you don't take.
 
 ## Let's Connect!
 
