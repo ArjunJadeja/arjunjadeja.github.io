@@ -3,9 +3,8 @@ title: Data Serialization and Deserialization with Kotlin
 date: 2024-08-03 12:00:00 +0530
 categories: [Kotlin Notes]
 tags: [kotlin, serialization, deserialization, json]
+image: /assets/data-serialization-and-deserialization/fig.data-travel.svg
 ---
-
-![Serialization Diagram](/assets/data-serialization-and-deserialization/fig.data-travel.svg)
 
 Suppose you have a `User(name: String, age: Int)` object in your system. How would you transfer the
 state of that object from one place to another (e.g., server -> frontend)?
