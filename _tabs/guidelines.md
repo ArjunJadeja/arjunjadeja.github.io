@@ -207,6 +207,23 @@ var CATEGORIES = [
           "Target by Jun 2026: 72–75 kg lean and muscular, decreasing fat while building muscle"
         ],
         postSlug: ""
+      },
+      {
+        icon: "🧴",
+        title: "Skincare Routine",
+        since: "Since Mar 2026",
+        tag: "Body",
+        body: "Took too long to start this. Goal is clear skin — keeping it consistent and seeing how it goes.",
+        points: [
+          "AM & PM: Foxtale Vitamin C + Papaya Enzyme Face Wash",
+          "AM & PM: Foxtale Gluta-Vit C Advanced Brightening Serum",
+          "AM & PM: Foxtale Vitamin C + Niacinamide + Squalane Moisturiser",
+          "AM only: Foxtale SPF 50 PA++++ Vitamin C + Niacinamide Sunscreen — non-negotiable",
+          "PM only: Foxtale Under Eye Cream — Vitamin C + Caffeine + Hyaluronic Acid",
+          "Water target: ~2.5–3L daily",
+          "8+ hours sleep, trying!"
+        ],
+        postSlug: ""
       }
     ]
   },
