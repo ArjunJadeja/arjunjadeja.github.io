@@ -1,9 +1,9 @@
-[//]: # (---)
+---
 
-[//]: # (layout: tags)
+layout: tags
 
-[//]: # (icon: fas fa-tags)
+icon: fas fa-tags
 
-[//]: # (order: 3)
+order: 3
 
-[//]: # (---)
+---

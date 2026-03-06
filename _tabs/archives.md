@@ -1,9 +1,9 @@
-[//]: # (---)
+---
 
-[//]: # (layout: archives)
+layout: archives
 
-[//]: # (icon: fas fa-archive)
+icon: fas fa-archive
 
-[//]: # (order: 4)
+order: 4
 
-[//]: # (---)
+---
