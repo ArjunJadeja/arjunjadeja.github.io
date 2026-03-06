@@ -110,7 +110,6 @@ order: 3
     <p class="gl-intro">
       These aren't rules I follow perfectly — they're principles I keep coming back to.
       Some I've held for years, others are newer experiments.
-      <strong>Flexible by design, honest by default.</strong> This page is a living document.
     </p>
   </div>
   <div class="gl-stats" id="gl-stats"></div>
