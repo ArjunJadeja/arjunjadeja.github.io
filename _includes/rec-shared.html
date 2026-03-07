@@ -1,0 +1,286 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  rec-shared.html  —  Shared styles for ALL recommendation pages     ║
+  ║                                                                      ║
+  ║  HOW TO USE:                                                         ║
+  ║    Add this line at the top of any recommendation inner page:        ║
+  ║    {% include rec-shared.html %}                                     ║
+  ║                                                                      ║
+  ║  WHAT IT PROVIDES:                                                   ║
+  ║    • Google Fonts (DM Sans, DM Mono, Playfair Display)               ║
+  ║    • CSS variables for the gold/dark design system                   ║
+  ║    • Shared layout classes: page wrap, header, back link,            ║
+  ║      title, subtitle, stats bar, filter bar, empty state,            ║
+  ║      badge styles, animation keyframes                               ║
+  ║                                                                      ║
+  ║  CSS CLASS REFERENCE (prefix: .rc- = "rec-component"):              ║
+  ║    .rc-wrap          → page max-width container                      ║
+  ║    .rc-header        → top section with back link + title            ║
+  ║    .rc-back          → ← Back to Recommendations link                ║
+  ║    .rc-title         → big Playfair Display heading                  ║
+  ║    .rc-title em      → italic gold accent word                       ║
+  ║    .rc-subtitle      → muted description paragraph                   ║
+  ║    .rc-stats         → flex row of stat numbers                      ║
+  ║    .rc-stat-n        → the big number                                ║
+  ║    .rc-stat-n span   → gold unit suffix (e.g. "+")                   ║
+  ║    .rc-stat-l        → small uppercase label below number            ║
+  ║    .rc-filters       → flex row of filter buttons                    ║
+  ║    .rc-filter        → individual filter button                      ║
+  ║    .rc-filter.active → active/selected state                         ║
+  ║    .rc-empty         → "nothing here yet" grid message               ║
+  ║    .rc-badge         → base badge style (combine with modifier)      ║
+  ║    .rc-badge-done    → green "✓ Done/Read/Watched" badge             ║
+  ║    .rc-badge-active  → gold "● In Progress" badge                    ║
+  ║    .rc-badge-want    → grey "○ Want to" badge                        ║
+  ║    .rc-view-all      → gold "View all →" link style                  ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+  /* ─────────────────────────────────────────────────────────────
+     DESIGN TOKENS
+     Edit these variables to retheme all recommendation pages at once.
+     ───────────────────────────────────────────────────────────── */
+  :root {
+    --rc-gold:        #f0a500;   /* primary accent — gold */
+    --rc-gold-hover:  #ffb820;   /* lighter gold on hover */
+    --rc-gold-dim:    rgba(240, 165, 0, 0.06);  /* very faint gold bg */
+    --rc-gold-border: rgba(240, 165, 0, 0.25);  /* gold border */
+
+    --rc-text-bright: #f5f2eb;   /* headings, card titles */
+    --rc-text-body:   #a09e98;   /* paragraph text */
+    --rc-text-muted:  #6b6965;   /* subtitles, meta */
+    --rc-text-dim:    #4a4845;   /* very muted labels */
+    --rc-text-ghost:  #3a3835;   /* barely visible */
+
+    --rc-surface:     rgba(255, 255, 255, 0.03);   /* card background */
+    --rc-border:      rgba(255, 255, 255, 0.06);   /* card border */
+    --rc-border-h:    rgba(240, 165, 0, 0.3);      /* card border on hover */
+    --rc-divider:     rgba(255, 255, 255, 0.07);   /* section dividers */
+
+    --rc-max-width: 900px;
+  }
+
+  /* Light mode token overrides — triggered by Chirpy's data-mode="light" */
+  html[data-mode="light"] {
+    --rc-gold:        #b86e00;
+    --rc-gold-hover:  #c97c00;
+    --rc-gold-dim:    rgba(184, 110, 0, 0.05);
+    --rc-gold-border: rgba(184, 110, 0, 0.25);
+
+    --rc-text-bright: #1a1916;
+    --rc-text-body:   #4a4845;
+    --rc-text-muted:  #7a7875;
+    --rc-text-dim:    #c0bebb;
+    --rc-text-ghost:  #c0bebb;
+
+    --rc-surface:     #f8f7f5;
+    --rc-border:      rgba(0, 0, 0, 0.08);
+    --rc-border-h:    rgba(184, 110, 0, 0.35);
+    --rc-divider:     rgba(0, 0, 0, 0.08);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     RESET  (scoped to .rc-wrap so it doesn't affect the theme)
+     ───────────────────────────────────────────────────────────── */
+  .rc-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ─────────────────────────────────────────────────────────────
+     PAGE CONTAINER
+     ───────────────────────────────────────────────────────────── */
+  .rc-wrap {
+    font-family: 'DM Sans', sans-serif;
+    max-width: var(--rc-max-width);
+    margin: 0 auto;
+    padding: 0 0 80px;
+    color: var(--rc-text-body);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     HEADER BLOCK  (back link + title + subtitle)
+     ───────────────────────────────────────────────────────────── */
+  .rc-header {
+    padding: 48px 0 52px;
+    border-bottom: 1px solid var(--rc-divider);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: rcUp 0.7s ease forwards 0.1s;
+  }
+
+  /* ← Back link */
+  .rc-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rc-text-muted) !important;
+    text-decoration: none !important;
+    margin-bottom: 28px;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .rc-back:hover { color: var(--rc-gold) !important; gap: 10px; }
+
+  /* Page title — use <h1 class="rc-title">Books I'm <em>Reading.</em></h1> */
+  .rc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--rc-text-bright);
+    margin-bottom: 16px;
+  }
+  .rc-title em { font-style: italic; color: var(--rc-gold); }
+
+  /* Subtitle paragraph */
+  .rc-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--rc-text-muted);
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     STATS BAR  — rendered by JS, injected into #xx-stats
+     ───────────────────────────────────────────────────────────── */
+  .rc-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: rcUp 0.6s ease forwards 0.25s;
+  }
+  .rc-stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--rc-text-bright);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .rc-stat-n span { font-size: 15px; color: var(--rc-gold); }
+  .rc-stat-l {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rc-text-ghost);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     FILTER BAR  — rendered by JS, injected into #xx-filters
+     ───────────────────────────────────────────────────────────── */
+  .rc-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: rcUp 0.6s ease forwards 0.35s;
+  }
+  .rc-filter {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border: 1px solid var(--rc-border);
+    background: transparent;
+    color: var(--rc-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .rc-filter:hover,
+  .rc-filter.active {
+    border-color: var(--rc-border-h);
+    color: var(--rc-gold);
+    background: var(--rc-gold-dim);
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     STATUS BADGES
+     Usage: <span class="rc-badge rc-badge-done">✓ Read</span>
+     ───────────────────────────────────────────────────────────── */
+  .rc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    width: fit-content;
+  }
+  /* Green — finished/read/watched */
+  .rc-badge-done    { background: rgba(34,197,94,0.1);   color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+  /* Gold  — in progress/watching/reading */
+  .rc-badge-active  { background: rgba(240,165,0,0.1);   color: var(--rc-gold); border: 1px solid rgba(240,165,0,0.2); }
+  /* Grey  — want to / backlog */
+  .rc-badge-want    { background: rgba(148,163,184,0.1); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+
+  html[data-mode="light"] .rc-badge-done   { background: rgba(22,163,74,0.08);  color: #16a34a; border-color: rgba(22,163,74,0.2); }
+  html[data-mode="light"] .rc-badge-active { background: rgba(184,110,0,0.08);  color: #b86e00; border-color: rgba(184,110,0,0.2); }
+  html[data-mode="light"] .rc-badge-want   { background: rgba(100,116,139,0.08); color: #64748b; border-color: rgba(100,116,139,0.2); }
+
+  /* ─────────────────────────────────────────────────────────────
+     "VIEW ALL →" LINK  (used on the about page previews)
+     ───────────────────────────────────────────────────────────── */
+  .rc-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rc-gold) !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid var(--rc-gold-border);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+  }
+  .rc-view-all:hover { border-color: var(--rc-gold); gap: 12px; }
+
+  /* ─────────────────────────────────────────────────────────────
+     EMPTY STATE  (shown when a filter returns zero results)
+     ───────────────────────────────────────────────────────────── */
+  .rc-empty {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--rc-text-ghost);
+    text-transform: uppercase;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     ANIMATIONS
+     ───────────────────────────────────────────────────────────── */
+  @keyframes rcUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes rcSpin { to { transform: rotate(360deg); } }
+
+  /* Loading spinner — used by watching/places pages while fetching API data */
+  .rc-spinner {
+    width: 20px; height: 20px;
+    border: 2px solid rgba(240,165,0,0.2);
+    border-top-color: var(--rc-gold);
+    border-radius: 50%;
+    animation: rcSpin 0.8s linear infinite;
+  }
+</style>

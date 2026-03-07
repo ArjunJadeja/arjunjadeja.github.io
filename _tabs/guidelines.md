@@ -208,6 +208,21 @@ var CATEGORIES = [
         postSlug: ""
       },
       {
+        icon: "🥗",
+        title: "Weekly Diet & Nutrition Plan",
+        since: "Since Mar 2026",
+        tag: "Body",
+        body: "Gujarati vegetarian plan built around tibia stress fracture recovery — muscle maintenance, bone healing, and real home cooking.",
+        points: [
+          "~2000 kcal/day · 100–110g protein · 1000–1200mg calcium",
+          "Ragi thepla 3x/week — single biggest calcium source in a vegetarian diet",
+          "15g walnuts daily for Omega-3, 10g pumpkin seeds for zinc + magnesium",
+          "Bajra roti at every dinner, chaas at every lunch",
+          "15–20 min morning sunlight + Vitamin D3 supplement (doctor advised)"
+        ],
+        postSlug: "weekly-diet-and-nutrition-plan"
+      },
+      {
         icon: "🧴",
         title: "Skincare Routine",
         since: "Since Mar 2026",
