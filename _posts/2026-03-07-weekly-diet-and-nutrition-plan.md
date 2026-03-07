@@ -3,6 +3,9 @@ title: Weekly Diet and Nutrition Plan
 date: 2026-03-07 08:00:00 +0530
 categories: [Health & Nutrition]
 tags: [routine]
+image:
+  path: /assets/posts/weekly-diet-and-nutrition-plan/thumbnail.svg
+  alt: "old image of mom at my blr home"
 ---
 
 ## Goal

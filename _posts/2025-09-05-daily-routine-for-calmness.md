@@ -3,6 +3,9 @@ title: Daily routine for Calmness
 date: 2025-09-05 10:30:00 +0530
 categories: [Habits]
 tags: [routine, lifestyle-improvement]
+image:
+  path: /assets/posts/daily-routine-for-calmness/focus-thumbnail.svg
+  alt: "old image of me looking into machine"
 ---
 
 ## Why?
