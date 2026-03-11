@@ -259,58 +259,20 @@ permalink: /watching/
 
    The poster, title, and year are fetched automatically from TMDB.
    ═══════════════════════════════════════════════════════════════════════ */
- const WATCHLIST = [
-   /* ── Movies ─────────────────────────────────────── */
-   /* ── Dark Knight Trilogy ── */
-   { tmdbId: 272, type: 'movie', status: 'watched', rating: 5, note: "Batman Begins — grounded origin done right." },
-   { tmdbId: 155, type: 'movie', status: 'watched', rating: 5, note: "The Dark Knight — still unmatched." },
-   { tmdbId: 49026, type: 'movie', status: 'watched', rating: 4, note: "The Dark Knight Rises — flawed, but epic." },
-   
-   /* ── Marvel / DC ── */
-   { tmdbId: 293660, type: 'movie', status: 'watched', rating: 4, note: "Deadpool — chaotic fun." },
-   { tmdbId: 284052, type: 'movie', status: 'watched', rating: 4, note: "Deadpool 2 — bigger, louder, still fun." },
-   { tmdbId: 1726, type: 'movie', status: 'watched', rating: 4, note: "Iron Man — the one that started it all." },
-   { tmdbId: 209112, type: 'movie', status: 'watched', rating: 3, note: "Batman v Superman — ambition over execution." },
-   { tmdbId: 297802, type: 'movie', status: 'watched', rating: 3, note: "Aquaman — surprisingly entertaining." },
-   { tmdbId: 297761, type: 'movie', status: 'watched', rating: 3, note: "Suicide Squad — messy but stylish." },
-   
-   /* ── Nolan ── */
-   { tmdbId: 77, type: 'movie', status: 'watched', rating: 5, note: "Memento — storytelling experiment." },
-   { tmdbId: 157336, type: 'movie', status: 'watched', rating: 5, note: "Interstellar — scale meets emotion." },
-   { tmdbId: 27205, type: 'movie', status: 'watched', rating: 5, note: "Inception — dreams within dreams." },
-   
-   /* ── Standalone Greats ── */
-   { tmdbId: 545611, type: 'movie', status: 'watched', rating: 5, note: "Everything Everywhere All at Once — absurd yet profound." },
-   { tmdbId: 11324, type: 'movie', status: 'watched', rating: 5, note: "Shutter Island — paranoia done beautifully." },
-   { tmdbId: 597, type: 'movie', status: 'watched', rating: 4, note: "Titanic — epic romance." },
-   { tmdbId: 475557, type: 'movie', status: 'watched', rating: 4, note: "Joker — descent into madness." },
-   { tmdbId: 786892, type: 'movie', status: 'watched', rating: 4, note: "The Menu — dark satire." },
-   
-   /* ── Mission / Action ── */
-   { tmdbId: 954, type: 'movie', status: 'watched', rating: 4, note: "Mission: Impossible — classic spy action." },
-   { tmdbId: 245891, type: 'movie', status: 'watched', rating: 4, note: "John Wick — stylish revenge." },
-   { tmdbId: 218, type: 'movie', status: 'watched', rating: 4, note: "The Terminator — pure sci-fi action." },
-   
-   /* ── Drama / Classics ── */
-   { tmdbId: 207, type: 'movie', status: 'watched', rating: 5, note: "Dead Poets Society — carpe diem." },
-   { tmdbId: 489, type: 'movie', status: 'watched', rating: 5, note: "Good Will Hunting — raw and human." },
-   { tmdbId: 105, type: 'movie', status: 'watched', rating: 4, note: "Back to the Future — timeless fun." },
-   { tmdbId: 504, type: 'movie', status: 'watched', rating: 4, note: "Midnight in Paris — nostalgia romance." },
-   
-   /* ── Indian ── */
-   { tmdbId: 45317, type: 'movie', status: 'watched', rating: 4, note: "Bumm Bumm Bole — simple and heartfelt." },
-   { tmdbId: 664413, type: 'movie', status: 'watched', rating: 4, note: "Chichhore — friendship and failure." },
-   { tmdbId: 615457, type: 'movie', status: 'watched', rating: 4, note: "Master — Vijay in full form." },
-   { tmdbId: 741067, type: 'movie', status: 'watched', rating: 4, note: "Chello Show — innocence and cinema." },
- 
-   { tmdbId: 1399, type: 'tv', status: 'watched', rating: 5, note: "Game of Thrones — peak fantasy television." },
-   { tmdbId: 94997, type: 'tv', status: 'watched', rating: 4, note: "House of the Dragon — political tension returns." },
-   { tmdbId: 1434, type: 'tv', status: 'watched', rating: 5, note: "Family, power, and the illusion of control." },
-   { tmdbId: 66732, type: 'tv', status: 'watching', rating: 4, note: "Stranger Things — still works." },
-   { tmdbId: 1668, type: 'tv', status: 'watched', rating: 5, note: "Friends — comfort TV." },
-   { tmdbId: 2316, type: 'tv', status: 'watched', rating: 5, note: "The Office — awkward brilliance." },
-   { tmdbId: 95396, type: 'tv', status: 'watching', rating: 5, note: "Severance — unsettling in the best way." }
- ];
+   const WATCHLIST = [
+      /* ── Movies ── */
+      { tmdbId: 489,    type: 'movie', status: 'watched', rating: 5, note: "Good Will Hunting — raw and human." },
+      { tmdbId: 207,    type: 'movie', status: 'watched', rating: 5, note: "Dead Poets Society — carpe diem." },
+      { tmdbId: 155,    type: 'movie', status: 'watched', rating: 5, note: "The Dark Knight — still unmatched." },
+      { tmdbId: 11324,  type: 'movie', status: 'watched', rating: 5, note: "Shutter Island — paranoia done beautifully." },
+      { tmdbId: 680,    type: 'movie', status: 'watched', rating: 5, note: "Pulp Fiction — nothing quite like it." },
+      { tmdbId: 45317,  type: 'movie', status: 'watched', rating: 4, note: "Bumm Bumm Bole — simple and heartfelt." },
+    
+      /* ── TV ── */
+      { tmdbId: 1434,   type: 'tv',    status: 'watched', rating: 5, note: "Succession — family, power, and the illusion of control." },
+      { tmdbId: 1668,   type: 'tv',    status: 'watched', rating: 5, note: "Friends — comfort TV." },
+      { tmdbId: 2316,   type: 'tv',    status: 'watched', rating: 5, note: "The Office — awkward brilliance." },
+    ];
 
 /* ═══════════════════════════════════════════════════════════════════════
    RENDERER — no need to edit below this line
